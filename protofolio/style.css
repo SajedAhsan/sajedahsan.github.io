@@ -5,3 +5,19 @@
 #myimg{
     height: 600px;
 }
+.formReply{
+    height: 500px;
+    width: 600px;
+    margin: 0 auto;
+    display: none;
+}
+.formReply p{
+    height: 100px;
+    width: 100%;
+}
+.disform{
+    height: 500px;
+    width: 600px;
+    margin: 0 auto;
+    display: inherit;
+}
