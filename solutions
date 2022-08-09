@@ -1,3 +1,4 @@
+//equal sum set 
 #include <bits/stdc++.h>
 #define rep(i, a, b) for (int i=a; i<b; i++) 
 using namespace std;
@@ -47,3 +48,77 @@ int main(){
        
 }
 --------------------------------------------------------------------------------------------------------
+// matrices 
+#include <bits/stdc++.h>
+#define rep(i, a, b) for (int i=a; i<b; i++) 
+using namespace std;
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n,m;
+        cin >> n >> m;
+        vector<int> v1;
+        vector<int> v2;
+
+        int yes = 1;
+        for(int i = 1;i<=2;i++){
+            for(int j =1;j<=m;j++){
+                if(i%2){
+                    if(j>=yes){
+                        if(j==2){
+                            v1.push_back(0);
+                            yes+=3;
+                            continue;
+                        }
+                        v1.push_back(1);
+                        if(j>yes){yes+=4;}
+                    }else{
+                        v1.push_back(0);
+
+                    }
+                }else{
+                    if(j>=yes){
+                        if(j==2){
+                            v2.push_back(1);
+                            yes+=3;
+                            continue;
+                        }
+                        v2.push_back(0);
+                        if(j>yes){yes+=4;}
+                    }else{
+                        v2.push_back(1);
+                    }
+                }
+            }
+            yes=1;
+        }
+        for(int i=1;i<=n;i++){
+            if(i==2){
+                for(auto &l2: v2){
+                    cout << l2 << " ";
+                }
+                yes+=3;
+                cout << endl;
+                continue;
+            }
+            if(i>=yes){
+                for(auto &l1: v1){
+                    cout << l1 << " ";
+                }
+                if(i>yes){yes+=4;}
+                cout << endl;
+            }else{
+                for(auto &l2: v2){
+                    cout << l2 << " ";
+                }
+                cout << endl;
+            }
+        }
+        v1.clear();
+        v2.clear();
+
+    }     
+}
+--------------------------------------------------------------------------
+//
